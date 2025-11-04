@@ -91,7 +91,7 @@ export function TransactionsPanel() {
               placeholder="Enter book code"
               value={searchId}
               onChange={(e) => setSearchId(e.target.value)}
-              className="w-full px-3 py-2 border border-input rounded-lg bg-background focus:outline-none focus:ring-2 focus:ring-primary"
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-blue-600"
             />
             <Button onClick={handleCheckAvailability} className="w-full">
               Check Availability
@@ -114,7 +114,7 @@ export function TransactionsPanel() {
               placeholder="Member ID"
               value={searchId}
               onChange={(e) => setSearchId(e.target.value)}
-              className="w-full px-3 py-2 border border-input rounded-lg bg-background focus:outline-none focus:ring-2 focus:ring-primary"
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-blue-600"
             />
             <Button onClick={handleIssueBook} className="w-full">
               Issue Book
@@ -132,7 +132,7 @@ export function TransactionsPanel() {
               placeholder="Member ID"
               value={searchId}
               onChange={(e) => setSearchId(e.target.value)}
-              className="w-full px-3 py-2 border border-input rounded-lg bg-background focus:outline-none focus:ring-2 focus:ring-primary"
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-blue-600"
             />
             <Button onClick={handleReturnBook} className="w-full">
               Return Book
@@ -150,21 +150,21 @@ export function TransactionsPanel() {
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
-                <tr className="border-b border-border">
-                  <th className="text-left py-3 px-4 font-semibold text-foreground">Transaction ID</th>
-                  <th className="text-left py-3 px-4 font-semibold text-foreground">Member ID</th>
-                  <th className="text-left py-3 px-4 font-semibold text-foreground">Book Code</th>
-                  <th className="text-left py-3 px-4 font-semibold text-foreground">Action</th>
-                  <th className="text-left py-3 px-4 font-semibold text-foreground">Date</th>
-                  <th className="text-center py-3 px-4 font-semibold text-foreground">Status</th>
+                <tr className="border-b border-gray-200">
+                  <th className="text-left py-3 px-4 font-semibold text-gray-900">Transaction ID</th>
+                  <th className="text-left py-3 px-4 font-semibold text-gray-900">Member ID</th>
+                  <th className="text-left py-3 px-4 font-semibold text-gray-900">Book Code</th>
+                  <th className="text-left py-3 px-4 font-semibold text-gray-900">Action</th>
+                  <th className="text-left py-3 px-4 font-semibold text-gray-900">Date</th>
+                  <th className="text-center py-3 px-4 font-semibold text-gray-900">Status</th>
                 </tr>
               </thead>
               <tbody>
                 {transactions.map((txn) => (
-                  <tr key={txn.id} className="border-b border-border hover:bg-muted/50">
-                    <td className="py-3 px-4 font-mono text-foreground">{txn.id}</td>
-                    <td className="py-3 px-4 text-foreground">{txn.memberId}</td>
-                    <td className="py-3 px-4 font-mono text-foreground">{txn.bookCode}</td>
+                  <tr key={txn.id} className="border-b border-gray-200 hover:bg-gray-50">
+                    <td className="py-3 px-4 font-mono text-gray-900">{txn.id}</td>
+                    <td className="py-3 px-4 text-gray-900">{txn.memberId}</td>
+                    <td className="py-3 px-4 font-mono text-gray-900">{txn.bookCode}</td>
                     <td className="py-3 px-4">
                       <span
                         className={`px-2 py-1 rounded-full text-xs font-medium ${
@@ -174,7 +174,7 @@ export function TransactionsPanel() {
                         {txn.action.charAt(0).toUpperCase() + txn.action.slice(1)}
                       </span>
                     </td>
-                    <td className="py-3 px-4 text-foreground">{txn.date}</td>
+                    <td className="py-3 px-4 text-gray-900">{txn.date}</td>
                     <td className="py-3 px-4 text-center text-lg">{getStatusIcon(txn.status)}</td>
                   </tr>
                 ))}

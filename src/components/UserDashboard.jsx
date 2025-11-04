@@ -28,15 +28,15 @@ export function UserDashboard({ userId, onLogout }) {
   ])
 
   return (
-    <div className="min-h-screen bg-background">
-      <div className="bg-card border-b border-border shadow-sm">
+    <div className="min-h-screen bg-gray-50">
+      <div className="bg-white border-b border-gray-200 shadow-sm">
         <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
           <div>
-            <h1 className="text-2xl font-bold text-foreground">My Library</h1>
-            <p className="text-sm text-muted-foreground">Welcome, {userId}</p>
+            <h1 className="text-2xl font-bold text-gray-900">My Library</h1>
+            <p className="text-sm text-gray-600">Welcome, {userId}</p>
           </div>
           <Button onClick={onLogout} variant="outline">
-            🚪 Logout
+            Logout
           </Button>
         </div>
       </div>
@@ -51,12 +51,12 @@ export function UserDashboard({ userId, onLogout }) {
             <CardContent>
               <div className="space-y-3">
                 {issuedBooks.map((book) => (
-                  <div key={book.code} className="p-4 border border-border rounded-lg bg-card hover:bg-muted/50">
+                  <div key={book.code} className="p-4 border border-gray-200 rounded-lg bg-white hover:bg-gray-50">
                     <div className="flex justify-between items-start">
                       <div>
-                        <h4 className="font-semibold text-foreground">{book.title}</h4>
-                        <p className="text-sm text-muted-foreground">Code: {book.code}</p>
-                        <p className="text-xs text-muted-foreground mt-1">
+                        <h4 className="font-semibold text-gray-900">{book.title}</h4>
+                        <p className="text-sm text-gray-600">Code: {book.code}</p>
+                        <p className="text-xs text-gray-600 mt-1">
                           Issued: {book.issueDate} | Due: {book.dueDate}
                         </p>
                       </div>
@@ -82,13 +82,13 @@ export function UserDashboard({ userId, onLogout }) {
             <CardContent className="space-y-4">
               <div className="flex gap-2">
                 <div className="relative flex-1">
-                  <span className="absolute left-3 top-2.5 text-muted-foreground">🔍</span>
+                  <span className="absolute left-3 top-2.5 text-gray-600">🔍</span>
                   <input
                     type="text"
                     placeholder="Search books by title or code..."
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    className="w-full pl-10 pr-3 py-2 border border-input rounded-lg bg-background focus:outline-none focus:ring-2 focus:ring-primary"
+                    className="w-full pl-10 pr-3 py-2 border border-gray-300 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-blue-600"
                   />
                 </div>
                 <Button>Search</Button>
@@ -105,20 +105,20 @@ export function UserDashboard({ userId, onLogout }) {
               <div className="overflow-x-auto">
                 <table className="w-full text-sm">
                   <thead>
-                    <tr className="border-b border-border">
-                      <th className="text-left py-3 px-4 font-semibold text-foreground">Book Code</th>
-                      <th className="text-left py-3 px-4 font-semibold text-foreground">Title</th>
-                      <th className="text-left py-3 px-4 font-semibold text-foreground">Category</th>
-                      <th className="text-left py-3 px-4 font-semibold text-foreground">Available</th>
-                      <th className="text-center py-3 px-4 font-semibold text-foreground">Action</th>
+                    <tr className="border-b border-gray-200">
+                      <th className="text-left py-3 px-4 font-semibold text-gray-900">Book Code</th>
+                      <th className="text-left py-3 px-4 font-semibold text-gray-900">Title</th>
+                      <th className="text-left py-3 px-4 font-semibold text-gray-900">Category</th>
+                      <th className="text-left py-3 px-4 font-semibold text-gray-900">Available</th>
+                      <th className="text-center py-3 px-4 font-semibold text-gray-900">Action</th>
                     </tr>
                   </thead>
                   <tbody>
                     {availableBooks.map((book) => (
-                      <tr key={book.code} className="border-b border-border hover:bg-muted/50">
-                        <td className="py-3 px-4 font-mono text-foreground">{book.code}</td>
-                        <td className="py-3 px-4 text-foreground">{book.title}</td>
-                        <td className="py-3 px-4 text-foreground">{book.category}</td>
+                      <tr key={book.code} className="border-b border-gray-200 hover:bg-gray-50">
+                        <td className="py-3 px-4 font-mono text-gray-900">{book.code}</td>
+                        <td className="py-3 px-4 text-gray-900">{book.title}</td>
+                        <td className="py-3 px-4 text-gray-900">{book.category}</td>
                         <td className="py-3 px-4">
                           <span className="px-2 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">
                             {book.available} available
@@ -142,20 +142,20 @@ export function UserDashboard({ userId, onLogout }) {
             <CardContent>
               <div className="grid gap-4 md:grid-cols-2">
                 <div>
-                  <p className="text-sm text-muted-foreground">User ID</p>
-                  <p className="font-semibold text-foreground">{userId}</p>
+                  <p className="text-sm text-gray-600">User ID</p>
+                  <p className="font-semibold text-gray-900">{userId}</p>
                 </div>
                 <div>
-                  <p className="text-sm text-muted-foreground">Member Status</p>
-                  <p className="font-semibold text-foreground">Active</p>
+                  <p className="text-sm text-gray-600">Member Status</p>
+                  <p className="font-semibold text-gray-900">Active</p>
                 </div>
                 <div>
-                  <p className="text-sm text-muted-foreground">Books Issued</p>
-                  <p className="font-semibold text-foreground">{issuedBooks.length}</p>
+                  <p className="text-sm text-gray-600">Books Issued</p>
+                  <p className="font-semibold text-gray-900">{issuedBooks.length}</p>
                 </div>
                 <div>
-                  <p className="text-sm text-muted-foreground">Pending Fines</p>
-                  <p className="font-semibold text-destructive">₹0</p>
+                  <p className="text-sm text-gray-600">Pending Fines</p>
+                  <p className="font-semibold text-red-600">₹0</p>
                 </div>
               </div>
             </CardContent>
